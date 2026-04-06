@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3xdf8403e8ms"]
+
+[ext_resource type="Script" uid="uid://d3fbx88js8pmt" path="res://EssentialCore/src/game_mangager.gd" id="1_smx3j"]
+[ext_resource type="PackedScene" uid="uid://c203optpy0yqe" path="res://EssentialCore/assets/maps/overworld.tscn" id="2_o2178"]
+
+[node name="GameManager" type="Node2D" unique_id=844832312]
+script = ExtResource("1_smx3j")
+
+[node name="Current" type="Node2D" parent="." unique_id=1665587453]
+
+[node name="Overworld" parent="Current" unique_id=1706700183 instance=ExtResource("2_o2178")]
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=996750319]

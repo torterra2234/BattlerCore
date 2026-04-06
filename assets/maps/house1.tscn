@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://b0meh2x8ijbtc"]
+
+[ext_resource type="Texture2D" uid="uid://cy88m5c6ts2ma" path="res://assets/tilesets/TileIndoor.png" id="1_kaq33"]
+[ext_resource type="PackedScene" uid="uid://dvejl1hv8pidt" path="res://src/player.tscn" id="2_ulqvw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
+texture = ExtResource("1_kaq33")
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+1:0/0/custom_data_2 = true
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_q6r6c"]
+custom_data_layer_0/name = "is_walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "is_ledge"
+custom_data_layer_1/type = 5
+custom_data_layer_2/name = "is_warp"
+custom_data_layer_2/type = 1
+sources/0 = SubResource("TileSetAtlasSource_0hol4")
+
+[node name="House1" type="Node2D" unique_id=955554005]
+
+[node name="FloorTiles" type="TileMapLayer" parent="." unique_id=459610400]
+position = Vector2(-8, -8)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAMAAAABAAAAAAABAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_q6r6c")
+
+[node name="Player" parent="." unique_id=1411649024 instance=ExtResource("2_ulqvw")]
+position = Vector2(16, 32)

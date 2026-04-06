@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3xdf8403e8ms"]
+
+[ext_resource type="Script" uid="uid://bxaqfv7fm6wum" path="res://scene_manager.gd" id="1_a4gjy"]
+[ext_resource type="PackedScene" uid="uid://c203optpy0yqe" path="res://overworld.tscn" id="1_jo5df"]
+
+[node name="SceneManager" type="Node2D" unique_id=844832312]
+script = ExtResource("1_a4gjy")
+
+[node name="Current" type="Node2D" parent="." unique_id=1665587453]
+
+[node name="Overworld" parent="Current" unique_id=1706700183 instance=ExtResource("1_jo5df")]
+
+[node name="Transition" type="CanvasLayer" parent="." unique_id=996750319]

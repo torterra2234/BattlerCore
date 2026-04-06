@@ -1,2 +1,1 @@
-# EssentialCore
-
+A Godot equvalent for Pokémon Essentials
