@@ -1,9 +1,74 @@
 [gd_scene format=3 uid="uid://e7a7v2vmkv21"]
 
-[ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/background_template.png" id="1_t54u2"]
+[ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/backgrounds/background_template.png" id="1_t54u2"]
+[ext_resource type="FontFile" uid="uid://bhbkdidkvj8b0" path="res://assets/fonts/basis33.ttf" id="2_1tu0a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1tu0a"]
+font = ExtResource("2_1tu0a")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [node name="BattleScene" type="CanvasLayer" unique_id=1832840145]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=363236342]
 texture = ExtResource("1_t54u2")
 centered = false
+
+[node name="Player" type="Node2D" parent="." unique_id=1968322788]
+
+[node name="Opponent" type="Node2D" parent="." unique_id=428645249]
+
+[node name="Control" type="Control" parent="." unique_id=12236054]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+
+[node name="Menus" type="HBoxContainer" parent="Control" unique_id=1535493207]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 272.0
+offset_right = 639.0
+offset_bottom = 359.0
+
+[node name="Left Box" type="NinePatchRect" parent="Control/Menus" unique_id=1929409251]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Text" type="Label" parent="Control/Menus/Left Box" unique_id=843148628]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "What do now?"
+label_settings = SubResource("LabelSettings_1tu0a")
+
+[node name="Right Box" type="NinePatchRect" parent="Control/Menus" unique_id=206276593]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="Control/Menus/Right Box" unique_id=53863938]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+
+[node name="Button" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=829299759]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "FIGHT"
+
+[node name="Button2" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=656964097]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BAG"
+
+[node name="Button3" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=118494893]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TEAM"
+
+[node name="Button4" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=1193566679]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "RUN"

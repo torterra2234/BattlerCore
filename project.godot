@@ -26,6 +26,10 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="testbed"
 
+[gui]
+
+theme/custom_font="uid://bhbkdidkvj8b0"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

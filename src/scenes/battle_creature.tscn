@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ujx3ahidaqfa"]
+
+[ext_resource type="Script" uid="uid://bwl5k08c84hp2" path="res://src/scripts/battle_creature.gd" id="1_n8pwy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8epa8"]
+
+[node name="BattleCreature" type="AnimatedSprite2D" unique_id=1009611495]
+sprite_frames = SubResource("SpriteFrames_8epa8")
+script = ExtResource("1_n8pwy")
