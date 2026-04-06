@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://e7a7v2vmkv21"]
+
+[ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/background_template.png" id="1_t54u2"]
+
+[node name="BattleScene" type="CanvasLayer" unique_id=1832840145]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=363236342]
+texture = ExtResource("1_t54u2")
+centered = false

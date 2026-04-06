@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3xdf8403e8ms"]
 
-[ext_resource type="Script" uid="uid://d3fbx88js8pmt" path="res://EssentialCore/src/game_mangager.gd" id="1_smx3j"]
-[ext_resource type="PackedScene" uid="uid://c203optpy0yqe" path="res://EssentialCore/assets/maps/overworld.tscn" id="2_o2178"]
+[ext_resource type="Script" uid="uid://d3fbx88js8pmt" path="res://src/scripts/game_mangager.gd" id="1_smx3j"]
+[ext_resource type="PackedScene" uid="uid://c203optpy0yqe" path="res://assets/maps/overworld.tscn" id="2_o2178"]
 
 [node name="GameManager" type="Node2D" unique_id=844832312]
 script = ExtResource("1_smx3j")

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c203optpy0yqe"]
 
-[ext_resource type="PackedScene" uid="uid://dvejl1hv8pidt" path="res://src/player.tscn" id="3_nyb65"]
+[ext_resource type="PackedScene" uid="uid://dvejl1hv8pidt" path="res://src/scenes/player.tscn" id="3_nyb65"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v726c"]
 load_path = "res://.godot/imported/Tiles.png-825b95a5145508fffe81ba0fc1c92c0b.ctex"
