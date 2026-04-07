@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bhbkdidkvj8b0"
-path="res://.godot/imported/basis33.ttf-e5bb23697f0cf9d1454360195f34b4b6.fontdata"
+uid="uid://bjn3b0vgsxuvn"
+path="res://.godot/imported/PKMN_Custom.ttf-f8d73d83784488f56babefe85fcffad4.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/basis33.ttf"
-dest_files=["res://.godot/imported/basis33.ttf-e5bb23697f0cf9d1454360195f34b4b6.fontdata"]
+source_file="res://assets/fonts/PKMN_Custom.ttf"
+dest_files=["res://.godot/imported/PKMN_Custom.ttf-f8d73d83784488f56babefe85fcffad4.fontdata"]
 
 [params]
 
@@ -16,15 +16,15 @@ Rendering=null
 antialiasing=0
 generate_mipmaps=false
 disable_embedded_bitmaps=true
-multichannel_signed_distance_field=true
+multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 modulate_color_glyphs=false
 hinting=0
-subpixel_positioning=0
-keep_rounding_remainders=true
+subpixel_positioning=4
+keep_rounding_remainders=false
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
@@ -34,8 +34,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
+"size": Vector2i(16, 0)
 }]
 language_support={}
 script_support={}

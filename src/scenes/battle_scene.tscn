@@ -1,14 +1,53 @@
 [gd_scene format=3 uid="uid://e7a7v2vmkv21"]
 
 [ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/backgrounds/background_template.png" id="1_t54u2"]
-[ext_resource type="FontFile" uid="uid://bhbkdidkvj8b0" path="res://assets/fonts/basis33.ttf" id="2_1tu0a"]
+[ext_resource type="Texture2D" uid="uid://d25emwnjihaoc" path="res://assets/borders/ui_border_1.png" id="2_epgqi"]
+[ext_resource type="Script" uid="uid://bkysq5y527g1i" path="res://src/scripts/selection.gd" id="2_ikpsp"]
+[ext_resource type="FontFile" uid="uid://bjn3b0vgsxuvn" path="res://assets/fonts/PKMN_Custom.ttf" id="4_246kf"]
+[ext_resource type="Texture2D" uid="uid://l0h2ft5tsao3" path="res://assets/Cursor.png" id="4_nltyr"]
+[ext_resource type="Texture2D" uid="uid://2f1j68i6id2h" path="res://assets/sprites/creatures/front/full_sprite.png" id="5_246kf"]
+[ext_resource type="Texture2D" uid="uid://brt2vanqpnpl0" path="res://assets/battle/InfoBar.png" id="6_1j357"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_246kf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nltyr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1tu0a"]
-font = ExtResource("2_1tu0a")
-font_size = 32
+line_spacing = 4.0
+font = ExtResource("4_246kf")
+font_size = 26
 font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nltyr"]
+font = ExtResource("4_246kf")
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.72008187, 0.72008187, 0.72008187, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1j357"]
+font = ExtResource("4_246kf")
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikpsp"]
+font = ExtResource("4_246kf")
+font_size = 13
 
 [node name="BattleScene" type="CanvasLayer" unique_id=1832840145]
+
+[node name="Selection" type="AnimatedSprite2D" parent="." unique_id=200108458]
+z_index = 1
+position = Vector2(430, 303)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_246kf")
+script = ExtResource("2_ikpsp")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=363236342]
 texture = ExtResource("1_t54u2")
@@ -18,57 +57,160 @@ centered = false
 
 [node name="Opponent" type="Node2D" parent="." unique_id=428645249]
 
-[node name="Control" type="Control" parent="." unique_id=12236054]
+[node name="Menus" type="Control" parent="." unique_id=12236054]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 3
 
-[node name="Menus" type="HBoxContainer" parent="Control" unique_id=1535493207]
+[node name="InitSelection" type="HBoxContainer" parent="Menus" unique_id=1535493207]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 272.0
-offset_right = 639.0
-offset_bottom = 359.0
+offset_top = 282.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_constants/separation = -8
 
-[node name="Left Box" type="NinePatchRect" parent="Control/Menus" unique_id=1929409251]
+[node name="Left Box" type="NinePatchRect" parent="Menus/InitSelection" unique_id=1929409251]
 layout_mode = 2
 size_flags_horizontal = 3
+texture = ExtResource("2_epgqi")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
-[node name="Text" type="Label" parent="Control/Menus/Left Box" unique_id=843148628]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "What do now?"
+[node name="Text" type="Label" parent="Menus/InitSelection/Left Box" unique_id=843148628]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 438.0
+offset_bottom = 96.0
+text = "What do now?
+testline"
 label_settings = SubResource("LabelSettings_1tu0a")
 
-[node name="Right Box" type="NinePatchRect" parent="Control/Menus" unique_id=206276593]
+[node name="Right Box" type="NinePatchRect" parent="Menus/InitSelection" unique_id=206276593]
+custom_minimum_size = Vector2(222, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+texture = ExtResource("2_epgqi")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
 
-[node name="GridContainer" type="GridContainer" parent="Control/Menus/Right Box" unique_id=53863938]
+[node name="GridContainer" type="GridContainer" parent="Menus/InitSelection/Right Box" unique_id=53863938]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 214.0
+offset_bottom = 96.0
+theme_override_constants/h_separation = 20
 columns = 2
 
-[node name="Button" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=829299759]
+[node name="Label" type="Label" parent="Menus/InitSelection/Right Box/GridContainer" unique_id=164672894]
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "FIGHT"
+label_settings = SubResource("LabelSettings_nltyr")
+vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=656964097]
+[node name="Label2" type="Label" parent="Menus/InitSelection/Right Box/GridContainer" unique_id=242998100]
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "BAG"
+label_settings = SubResource("LabelSettings_nltyr")
+vertical_alignment = 1
 
-[node name="Button3" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=118494893]
+[node name="Label3" type="Label" parent="Menus/InitSelection/Right Box/GridContainer" unique_id=580927557]
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "TEAM"
+label_settings = SubResource("LabelSettings_nltyr")
+vertical_alignment = 1
 
-[node name="Button4" type="Button" parent="Control/Menus/Right Box/GridContainer" unique_id=1193566679]
+[node name="Label4" type="Label" parent="Menus/InitSelection/Right Box/GridContainer" unique_id=387830853]
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "RUN"
+label_settings = SubResource("LabelSettings_nltyr")
+vertical_alignment = 1
+
+[node name="PLACEHOLDER" type="Sprite2D" parent="." unique_id=1790730539]
+position = Vector2(429, 81)
+texture = ExtResource("5_246kf")
+
+[node name="PLACEHOLDER2" type="Sprite2D" parent="." unique_id=1059029310]
+position = Vector2(205, 200)
+texture = ExtResource("5_246kf")
+
+[node name="PlayerHealth" type="ColorRect" parent="." unique_id=411726331]
+offset_left = 352.0
+offset_top = 238.0
+offset_right = 554.0
+offset_bottom = 249.0
+color = Color(0.1333332, 1, 0, 1)
+
+[node name="PlayerInfoBar" type="Sprite2D" parent="." unique_id=533032347]
+position = Vector2(468, 223)
+texture = ExtResource("6_1j357")
+
+[node name="Nickname" type="Label" parent="PlayerInfoBar" unique_id=1279192419]
+offset_left = -91.0
+offset_top = -26.0
+offset_right = -31.0
+offset_bottom = 1.0
+text = "Player"
+label_settings = SubResource("LabelSettings_1j357")
+
+[node name="Lvl" type="Label" parent="PlayerInfoBar" unique_id=1105019715]
+offset_left = 52.0
+offset_top = -19.0
+offset_right = 92.0
+offset_bottom = -3.0
+text = "Lvl XX"
+label_settings = SubResource("LabelSettings_ikpsp")
+
+[node name="HP" type="Label" parent="PlayerInfoBar" unique_id=220246000]
+offset_left = 69.0
+offset_top = 8.0
+offset_right = 109.0
+offset_bottom = 24.0
+text = "18/18"
+label_settings = SubResource("LabelSettings_ikpsp")
+
+[node name="OpponentHealth" type="ColorRect" parent="." unique_id=282986135]
+offset_left = 92.0
+offset_top = 80.0
+offset_right = 294.0
+offset_bottom = 91.0
+color = Color(0.23333335, 1, 0, 1)
+
+[node name="OpponentInfoBar" type="Sprite2D" parent="." unique_id=1541226955]
+position = Vector2(180, 65)
+texture = ExtResource("6_1j357")
+flip_h = true
+
+[node name="Nickname" type="Label" parent="OpponentInfoBar" unique_id=1313718503]
+offset_left = -91.0
+offset_top = -26.0
+offset_right = -31.0
+offset_bottom = 1.0
+text = "Opponent"
+label_settings = SubResource("LabelSettings_1j357")
+
+[node name="Lvl" type="Label" parent="OpponentInfoBar" unique_id=1718320298]
+offset_left = 52.0
+offset_top = -19.0
+offset_right = 92.0
+offset_bottom = -3.0
+text = "Lvl. XXX"
+label_settings = SubResource("LabelSettings_ikpsp")
+
+[node name="HP" type="Label" parent="OpponentInfoBar" unique_id=2009429030]
+offset_left = 69.0
+offset_top = 8.0
+offset_right = 109.0
+offset_bottom = 24.0
+text = "10/10"
+label_settings = SubResource("LabelSettings_ikpsp")
