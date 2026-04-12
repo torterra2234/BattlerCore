@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-var creature : CreatureResource
+var creature : CreatureResource = load("res://test_battler.tres")
 
 func create(battler : CreatureResource, is_player : bool = false) -> void:
 	creature = battler

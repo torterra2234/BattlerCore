@@ -212,15 +212,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Power: XXX
 Type: Who Knows"
 
+[node name="PlayerHealth" type="ColorRect" parent="." unique_id=411726331]
+offset_left = 361.0
+offset_top = 213.0
+offset_right = 563.0
+offset_bottom = 224.0
+color = Color(0.1333332, 1, 0, 1)
+
 [node name="Player" parent="." unique_id=1009611495 instance=ExtResource("7_wjrsu")]
 position = Vector2(209, 209)
-
-[node name="Healthbar" type="ColorRect" parent="Player" unique_id=411726331]
-offset_left = 154.0
-offset_top = 9.0
-offset_right = 354.0
-offset_bottom = 11.0
-color = Color(0.1333332, 1, 0, 1)
 
 [node name="PlayerInfoBar" type="Sprite2D" parent="." unique_id=533032347]
 position = Vector2(476, 197)
@@ -250,18 +250,18 @@ offset_bottom = 24.0
 text = "18/18"
 label_settings = SubResource("LabelSettings_ikpsp")
 
+[node name="OpponentHealth" type="ColorRect" parent="." unique_id=282986135]
+offset_left = 92.0
+offset_top = 80.0
+offset_right = 294.0
+offset_bottom = 91.0
+color = Color(0.23333335, 1, 0, 1)
+
 [node name="Opponent" parent="." unique_id=584648803 instance=ExtResource("7_wjrsu")]
 position = Vector2(431, 80)
 
-[node name="Healthbar" type="ColorRect" parent="Opponent" unique_id=282986135]
-offset_left = -334.0
-offset_top = 6.0
-offset_right = -134.0
-offset_bottom = 8.0
-color = Color(0.23333335, 1, 0, 1)
-
 [node name="OpponentInfoBar" type="Sprite2D" parent="." unique_id=1541226955]
-position = Vector2(179, 65)
+position = Vector2(180, 65)
 texture = ExtResource("6_1j357")
 flip_h = true
 

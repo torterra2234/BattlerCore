@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoveResource" format=3 uid="uid://bcy6srowy5sye"]
+
+[ext_resource type="Script" uid="uid://cn1uxbb458q5g" path="res://src/scripts/resources/move_resource.gd" id="1_pph0u"]
+
+[resource]
+script = ExtResource("1_pph0u")
+name = "Smack"
+base_power = 20
+metadata/_custom_type_script = "uid://cn1uxbb458q5g"
