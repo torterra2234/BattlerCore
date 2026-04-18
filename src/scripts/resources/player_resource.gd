@@ -5,9 +5,8 @@ var money : int
 
 var team : Array[CreatureResource]
 
-func create_new(set_name : String) -> void:
-	name = set_name
-	add_to_team(load("res://test_battler.tres"))
+func create_new(player_name : String) -> void:
+	name = player_name
 
 func add_to_team(member : CreatureResource) -> bool:
 	if team.size() == 6:

@@ -1,13 +1,17 @@
 extends AnimatedSprite2D
 
 signal move_selected(idx : int)
+signal item_selected
+signal party_selected
+signal run_selected
+
 
 var location := Vector2.ZERO
 var menu := ""
 
 enum MODE {SELECT, FIGHT}
 
-var input_buffer
+var input_buffer : Vector2
 
 func _process(_delta: float) -> void:
 	var direction := get_input_direction()
@@ -34,7 +38,7 @@ func get_input_direction() -> Vector2:
 
 	return Vector2.ZERO
 	
-func try_move(direction) -> void:
+func try_move(direction : Vector2) -> void:
 	location += direction
 	location = location.clamp(Vector2.ZERO,Vector2(1,1))
 	update_location()
@@ -90,7 +94,7 @@ func select() -> void:
 			Vector2.RIGHT:
 				print("bag")
 			Vector2(1,1):
-				get_tree().quit()
+				run_selected.emit()
 			
 func back() -> void:
 	if menu == "fight":

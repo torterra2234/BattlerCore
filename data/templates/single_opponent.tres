@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleTemplate" format=3 uid="uid://bdlb8sq21408y"]
+
+[ext_resource type="Script" uid="uid://bl1ct43yti46y" path="res://src/scripts/resources/battle_creature_setup.gd" id="1_4ob40"]
+
+[resource]
+script = ExtResource("1_4ob40")
+sprite_pos = Vector2(484, 81)
+box_pos = Vector2(179, 65)
+healthbar_len = 200
+metadata/_custom_type_script = "uid://bl1ct43yti46y"

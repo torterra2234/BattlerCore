@@ -5,17 +5,23 @@ class_name CreatureResource extends Resource
 
 @export var curr_hp : int
 
+@export var level : int
 @export var max_hp : int
 @export var attack : int
-@export var defense : int
+@export var defence : int
 
 @export var moves : Array[MoveResource]
 
-func update_from_species(new_species: SpeciesResource):
+func update_from_species(new_species: SpeciesResource) -> void:
 	species = new_species
 	max_hp = species.base_hp
 	attack = species.base_attack
-	defense = species.base_defence
+	defence = species.base_defence
 	curr_hp = max_hp
-	moves.append(load("res://data/moves/Smack.tres"))
+	moves.append(load("res://data/moves/Smack.tres")) #needs be custom function
 	
+func get_nickname() -> String:
+	if name != "":
+		return name
+	else:
+		return species.name

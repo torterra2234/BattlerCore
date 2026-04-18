@@ -13,11 +13,11 @@ var facing := Vector2.DOWN
 
 var target_position: Vector2
 
-func _ready():
+func _ready() -> void:
 	position = position.snapped(Vector2(tile_size, tile_size))
 	target_position = position
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if is_snapping:
 		return
 
@@ -26,7 +26,7 @@ func _physics_process(delta):
 	else:
 		handle_input()
 
-func handle_input():
+func handle_input() -> void:
 	var direction := get_input_direction()
 
 	if direction != Vector2.ZERO:
@@ -53,19 +53,19 @@ func get_input_direction() -> Vector2:
 
 	return Vector2.ZERO
 
-func attempt_move(direction: Vector2):
+func attempt_move(direction: Vector2) -> void:
 	var new_target = position + direction * tile_size
 
 	if can_move_to(new_target, direction):
 		start_move(new_target)
 
-func start_move(new_target: Vector2):
+func start_move(new_target: Vector2) -> void:
 	target_position = new_target
 	is_moving = true
 	facing = (target_position - position).normalized()
 	update_animation()
 
-func move_to_target(delta):
+func move_to_target(delta) -> void:
 	var direction = (target_position - position).normalized()
 	velocity = direction * move_speed
 	move_and_slide()
@@ -73,7 +73,7 @@ func move_to_target(delta):
 	if position.distance_to(target_position) < 2:
 		finish_move()
 
-func finish_move():
+func finish_move() -> void:
 	position = target_position
 	velocity = Vector2.ZERO
 
@@ -89,7 +89,7 @@ func finish_move():
 		get_node("/root/GameManager").transition_from_warp(get_parent().name,grid_pos)
 		
 
-func snap_to_grid():
+func snap_to_grid() -> void:
 	var snap_pos = position.snapped(Vector2(tile_size, tile_size))
 
 	if position == snap_pos:
@@ -105,27 +105,27 @@ func snap_to_grid():
 
 	tween.finished.connect(_on_snap_finished)
 
-func _on_snap_finished():
+func _on_snap_finished() -> void:
 	is_snapping = false
 	check_buffer()
 
-func check_buffer():
+func check_buffer() -> void:
 	if input_buffer != Vector2.ZERO:
 		attempt_move(input_buffer)
 
 func can_move_to(target: Vector2, direction: Vector2) -> bool:
-	var tile = walk_tiles.local_to_map(target)
-	var data = walk_tiles.get_cell_tile_data(tile)
+	var tile := walk_tiles.local_to_map(target)
+	var data := walk_tiles.get_cell_tile_data(tile)
 	if data:
 		if not data.get_custom_data("is_walkable"):
 			return false
-		var ledge_dir = data.get_custom_data("is_ledge")
+		var ledge_dir : Vector2 = data.get_custom_data("is_ledge")
 		if ledge_dir != Vector2.ZERO:
 			return ledge_dir == direction
 		return true
 	return false
 
-func update_animation():
+func update_animation() -> void:
 	$AnimatedSprite2D.play("walk_" + direction_to_string(facing))
 
 func direction_to_string(dir: Vector2) -> String:

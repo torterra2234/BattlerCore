@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_pph0u")
 name = "Smack"
-base_power = 20
+base_power = 2
 metadata/_custom_type_script = "uid://cn1uxbb458q5g"
