@@ -25,3 +25,7 @@ func get_nickname() -> String:
 		return name
 	else:
 		return species.name
+
+##handling for front/back/shiny frames
+func get_battle_sprites() -> SpriteFrames:
+	return species.sprite

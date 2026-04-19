@@ -3,10 +3,21 @@
 [ext_resource type="Script" uid="uid://2hdq33i0sg8h" path="res://src/scripts/resources/species_resource.gd" id="1_jol73"]
 [ext_resource type="Texture2D" uid="uid://2f1j68i6id2h" path="res://assets/sprites/creatures/front/full_sprite.png" id="2_2wtf0"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wtf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2wtf0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_jol73")
 name = "Test"
-sprite = ExtResource("2_2wtf0")
+sprite = SubResource("SpriteFrames_2wtf0")
 base_hp = 20
 base_attack = 20
 base_defence = 20

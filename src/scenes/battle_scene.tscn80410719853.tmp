@@ -132,7 +132,7 @@ offset_right = 640.0
 offset_bottom = 78.0
 theme_override_constants/separation = -8
 
-[node name="LeftBox" type="NinePatchRect" parent="Menus/FightSelection" unique_id=1381888084]
+[node name="Left Box" type="NinePatchRect" parent="Menus/FightSelection" unique_id=1381888084]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -142,7 +142,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="GridContainer" type="GridContainer" parent="Menus/FightSelection/LeftBox" unique_id=1699767367]
+[node name="GridContainer" type="GridContainer" parent="Menus/FightSelection/Left Box" unique_id=1699767367]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 12.0
@@ -151,28 +151,28 @@ offset_bottom = 70.0
 theme_override_constants/h_separation = 20
 columns = 2
 
-[node name="Move0" type="Label" parent="Menus/FightSelection/LeftBox/GridContainer" unique_id=136081545]
+[node name="Label" type="Label" parent="Menus/FightSelection/Left Box/GridContainer" unique_id=136081545]
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 text = "Aromatherapy"
 label_settings = SubResource("LabelSettings_nltyr")
 vertical_alignment = 1
 
-[node name="Move1" type="Label" parent="Menus/FightSelection/LeftBox/GridContainer" unique_id=1701208642]
-custom_minimum_size = Vector2(184, 0)
-layout_mode = 2
-text = "Parabolic Laser"
-label_settings = SubResource("LabelSettings_nltyr")
-vertical_alignment = 1
-
-[node name="Move2" type="Label" parent="Menus/FightSelection/LeftBox/GridContainer" unique_id=1013298751]
+[node name="Label2" type="Label" parent="Menus/FightSelection/Left Box/GridContainer" unique_id=1013298751]
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 text = "Sod Z Moves"
 label_settings = SubResource("LabelSettings_nltyr")
 vertical_alignment = 1
 
-[node name="Move3" type="Label" parent="Menus/FightSelection/LeftBox/GridContainer" unique_id=144115275]
+[node name="Label3" type="Label" parent="Menus/FightSelection/Left Box/GridContainer" unique_id=1701208642]
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+text = "Parabolic Laser"
+label_settings = SubResource("LabelSettings_nltyr")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Menus/FightSelection/Left Box/GridContainer" unique_id=144115275]
 custom_minimum_size = Vector2(184, 0)
 layout_mode = 2
 text = "Move 4"

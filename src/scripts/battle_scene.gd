@@ -25,6 +25,19 @@ func _ready() -> void:
 	opponent_creatures.append(battle_template.instantiate())
 	add_child(opponent_creatures[0])
 	opponent_creatures[0].setup("single_opponent",opponent_team[0])
+	update_moves()
+	
+func update_moves() -> void:
+	var move_box := "Menus/FightSelection/LeftBox/GridContainer"
+	var info_box := "Menus/FightSelection/RightBox/VBoxContainer/Label"
+	var movelist : Array[MoveResource] = PlayerHandler.player.team[0].moves
+	var moves : int = len(movelist)
+	for i in range(moves):
+		var label : Label = get_node(move_box+"/Move"+str(i))
+		label.text = movelist[i].name
+	for i in range(4-moves):
+		var label : Label = get_node(move_box+"/Move"+str(i+moves))
+		label.text = ""
 	
 
 func _on_move_selected(idx: int) -> void:
@@ -51,22 +64,11 @@ func calculate_round() -> void:
 		get_tree().quit()
 		return
 	var opp_move := load("res://data/moves/Smack.tres") #get_opponent_move() ai function
-	apply_dmg(calculate_dmg(player_choice,PlayerHandler.player.team[player_current],opponent_team[opponent_current]),opponent_team[opponent_current])
-	apply_dmg(calculate_dmg(opp_move,opponent_team[opponent_current],PlayerHandler.player.team[player_current]),PlayerHandler.player.team[player_current])
+	player_creatures[0].apply_dmg(calculate_dmg(player_choice,PlayerHandler.player.team[player_current],opponent_team[opponent_current]))
+	opponent_creatures[0].apply_dmg(calculate_dmg(opp_move,opponent_team[opponent_current],PlayerHandler.player.team[player_current]))
 
 func calculate_dmg(move : MoveResource, user : CreatureResource, target : CreatureResource) -> int:
 	return move.base_power * user.attack / target.defence
-
-func apply_dmg(dmg: int, target : CreatureResource) -> bool:
-	var faint := false
-	var old_hp : int = target.curr_hp
-	if dmg >= old_hp:
-		faint = true
-		dmg = old_hp
-	target.curr_hp -= dmg
-	print(target.curr_hp)
-	update_healthbar(target)
-	return faint
 
 func update_healthbar(target : CreatureResource) ->void:
 	pass
