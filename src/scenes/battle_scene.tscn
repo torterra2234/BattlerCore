@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c4ndy07a8d857" path="res://src/scripts/battle_scene.gd" id="1_doawy"]
 [ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/backgrounds/background_template.png" id="1_t54u2"]
 [ext_resource type="Texture2D" uid="uid://d25emwnjihaoc" path="res://assets/borders/ui_border_1.png" id="2_epgqi"]
-[ext_resource type="Script" uid="uid://bkysq5y527g1i" path="res://src/scripts/selection.gd" id="2_ikpsp"]
 [ext_resource type="FontFile" uid="uid://bjn3b0vgsxuvn" path="res://assets/fonts/PKMN_Custom.ttf" id="4_246kf"]
 [ext_resource type="Texture2D" uid="uid://l0h2ft5tsao3" path="res://assets/Cursor.png" id="4_nltyr"]
 [ext_resource type="Theme" uid="uid://dcygbbivo8nq5" path="res://assets/ui_theme.tres" id="7_bgvyo"]
@@ -40,7 +39,6 @@ z_index = 1
 position = Vector2(430, 303)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_246kf")
-script = ExtResource("2_ikpsp")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=363236342]
 texture = ExtResource("1_t54u2")
@@ -201,8 +199,3 @@ theme = ExtResource("7_bgvyo")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Power: XXX
 Type: Who Knows"
-
-[connection signal="item_selected" from="Selection" to="." method="_on_item_selected"]
-[connection signal="move_selected" from="Selection" to="." method="_on_move_selected"]
-[connection signal="party_selected" from="Selection" to="." method="_on_party_selected"]
-[connection signal="run_selected" from="Selection" to="." method="_on_run_selected"]

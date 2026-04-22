@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="SpeciesResource" format=3 uid="uid://bnjwtp440livv"]
+
+[ext_resource type="Texture2D" uid="uid://devplr5aw5d01" path="res://assets/sprites/creatures/party/Placeholder.png" id="1_gogeg"]
+[ext_resource type="Script" uid="uid://2hdq33i0sg8h" path="res://src/scripts/resources/species_resource.gd" id="1_qi13h"]
+[ext_resource type="Texture2D" uid="uid://b7uhc5r83lcwm" path="res://assets/sprites/creatures/front/triangle.png" id="2_gyic2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f33fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gogeg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gogeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gyic2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_qi13h")
+sprite = SubResource("SpriteFrames_gogeg")
+party_sprite = SubResource("SpriteFrames_f33fn")
+base_hp = 20
+base_attack = 40
+base_defence = 20
+base_speed = 20
+metadata/_custom_type_script = "uid://2hdq33i0sg8h"

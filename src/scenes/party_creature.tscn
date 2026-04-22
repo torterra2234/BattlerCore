@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c3lcif2s162sl"]
+
+[ext_resource type="Texture2D" uid="uid://brt2vanqpnpl0" path="res://assets/battle/InfoBar.png" id="1_dmsw0"]
+[ext_resource type="Script" uid="uid://ddl5nbcacjx4t" path="res://src/scripts/party_creature.gd" id="2_6aitm"]
+[ext_resource type="Texture2D" uid="uid://devplr5aw5d01" path="res://assets/sprites/creatures/party/Placeholder.png" id="2_gomxk"]
+[ext_resource type="Theme" uid="uid://dcygbbivo8nq5" path="res://assets/ui_theme.tres" id="3_6aitm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23dun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gomxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PartyCreature" type="Sprite2D" unique_id=699351814]
+texture = ExtResource("1_dmsw0")
+script = ExtResource("2_6aitm")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=835259043]
+position = Vector2(-68, 2)
+sprite_frames = SubResource("SpriteFrames_23dun")
+
+[node name="Label" type="Label" parent="." unique_id=858590750]
+offset_left = 47.0
+offset_top = -22.0
+offset_right = 95.0
+offset_bottom = 5.0
+theme = ExtResource("3_6aitm")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TEST"

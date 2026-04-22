@@ -1,7 +1,19 @@
 [gd_resource type="Resource" script_class="SpeciesResource" format=3 uid="uid://ciuom434s7bxy"]
 
+[ext_resource type="Texture2D" uid="uid://devplr5aw5d01" path="res://assets/sprites/creatures/party/Placeholder.png" id="1_7mwoi"]
 [ext_resource type="Script" uid="uid://2hdq33i0sg8h" path="res://src/scripts/resources/species_resource.gd" id="1_jol73"]
 [ext_resource type="Texture2D" uid="uid://2f1j68i6id2h" path="res://assets/sprites/creatures/front/full_sprite.png" id="2_2wtf0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23weq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7mwoi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2wtf0"]
 animations = [{
@@ -18,7 +30,9 @@ animations = [{
 script = ExtResource("1_jol73")
 name = "Test"
 sprite = SubResource("SpriteFrames_2wtf0")
+party_sprite = SubResource("SpriteFrames_23weq")
 base_hp = 20
 base_attack = 20
 base_defence = 20
+base_speed = 20
 metadata/_custom_type_script = "uid://2hdq33i0sg8h"

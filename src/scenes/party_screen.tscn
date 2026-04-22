@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5vkbsgjn1p8s"]
+
+[ext_resource type="Script" uid="uid://regl47lm5mqi" path="res://src/scripts/party_screen.gd" id="1_r4084"]
+[ext_resource type="Texture2D" uid="uid://73q7teme1lbv" path="res://assets/battle/backgrounds/background_template.png" id="1_w38j0"]
+
+[node name="PartyScreen" type="CanvasLayer" unique_id=2003278716]
+script = ExtResource("1_r4084")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1266696240]
+texture = ExtResource("1_w38j0")
+centered = false
