@@ -12,7 +12,7 @@ func setup(resource : String, battler : CreatureResource) -> void:
 	$InfoBar.position = template.box_pos
 	$InfoBar/Name.text = creature.get_nickname()
 	$InfoBar/Lvl.text = "Lvl "+str(creature.level)
-	$InfoBar/HP.text = str(creature.curr_hp) +"/"+ str(creature.max_hp)
+	$InfoBar/HP.text = str(creature.curr_hp) +"/"+ str(creature.max_hp) #needs altering later
 	healthbar_len = template.healthbar_len
 	$InfoBar/Healthbar.size.x = healthbar_len
 	
@@ -30,4 +30,11 @@ func apply_dmg(dmg : int) -> bool:
 	update_health(old_hp-dmg)
 	print(creature.curr_hp)
 	return faint
+
+func get_stat(stat : String) -> int:
+	match stat:
+		"speed":
+			return creature.speed
+		_:
+			return 0
 	

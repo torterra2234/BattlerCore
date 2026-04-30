@@ -3,6 +3,7 @@ extends CanvasLayer
 var creatures : Array
 const POSITIONS : Array[Vector2] = [Vector2(160,50),Vector2(420,100),Vector2(160,150),
 					Vector2(420,200),Vector2(160,250),Vector2(420,300)]
+var cursor : int
 
 func _ready() -> void:
 	var blank : PackedScene = load("res://src/scenes/party_creature.tscn")
@@ -12,4 +13,9 @@ func _ready() -> void:
 		creatures[i].set_sprite(PlayerHandler.player.team[i].species.party_sprite)
 		creatures[i].position = POSITIONS[i]
 		
+func hover(pos : int):
+	creatures[cursor].unhover()
+	creatures[pos].hover()
+	cursor = pos
+	
 		

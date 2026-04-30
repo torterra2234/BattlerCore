@@ -9,6 +9,7 @@ class_name CreatureResource extends Resource
 @export var max_hp : int
 @export var attack : int
 @export var defence : int
+@export var speed : int
 
 @export var moves : Array[MoveResource]
 
@@ -17,6 +18,7 @@ func update_from_species(new_species: SpeciesResource) -> void:
 	max_hp = species.base_hp
 	attack = species.base_attack
 	defence = species.base_defence
+	speed = species.base_speed
 	curr_hp = max_hp
 	moves.append(load("res://data/moves/Smack.tres")) #needs be custom function
 	
